@@ -1,7 +1,7 @@
 gem 'minitest', '~> 5.2'
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative 'beers'
+require_relative 'beer'
 
 class BeersTest < Minitest::Test
   def test_inventory_starts_at_99
@@ -10,9 +10,7 @@ class BeersTest < Minitest::Test
   end
 
   def test_inventory_decreases
-    skip
     beers = Beers.new
-
     beers.take_one_down_and_pass_it_around
     assert_equal 98, beers.inventory
 
